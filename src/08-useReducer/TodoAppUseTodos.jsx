@@ -1,14 +1,22 @@
 import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
-import { useTodos } from "../hooks/useTodos";
+import { useTodos } from "../hooks"; //importa desde el archivo index, donde está el export de todos los hooks en la caprtea
 
 export const TodoAppUseTodos = () => {
-	const { todos, handelNewTodo, handleDelete, handleToggle } = useTodos();
+	const {
+		todos,
+		todosCount,
+		pendingTodosCount,
+		handelNewTodo,
+		handleDelete,
+		handleToggle,
+	} = useTodos();
 
 	return (
 		<div className="container">
 			<h1>
-				Todo App 10, <small>Pendientes 2</small>
+				TodoApp: {todosCount}
+				<small> Pendientes: {pendingTodosCount}</small>
 			</h1>
 			<hr />
 
